@@ -52,4 +52,9 @@ public class ShoppingCartSteps {
     public void theNumberIfItemsFoundIs(String expectedQuantity) {
         assertTrue(shoppingCartPage.isNumberOfProducts(expectedQuantity));
     }
+
+    @When("a user adds item {string} to the cart")
+    public void aUserAddsItemToTheCart(String itemName) {
+        shoppingCartPage.addItemToCart(itemName);
+    }
 }

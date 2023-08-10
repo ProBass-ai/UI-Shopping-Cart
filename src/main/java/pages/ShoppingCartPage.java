@@ -37,5 +37,9 @@ public class ShoppingCartPage {
         return wait.until(ExpectedConditions.textToBe(byNumberOfProductsFound, quantity + " Product(s) found"));
     }
 
+    public void addItemToCart(String itemName){
+        TestHelper.click(driver, getByAddClothingToCart(itemName));
+    }
+
 
 }
