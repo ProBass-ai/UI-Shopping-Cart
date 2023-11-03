@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -56,5 +57,15 @@ public class ShoppingCartSteps {
     @When("a user adds item {string} to the cart")
     public void aUserAddsItemToTheCart(String itemName) {
         shoppingCartPage.addItemToCart(itemName);
+    }
+
+    @When("the user views the cart")
+    public void theUserViewsTheCart() {
+        shoppingCartPage.clickOnCartSidePanel();
+    }
+
+    @Then("the item {string} is in the cart")
+    public void theItemIsInTheCart(String itemName) {
+        assertTrue(shoppingCartPage.getAllCartItemNames().contains(itemName));
     }
 }
